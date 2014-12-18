@@ -11,6 +11,8 @@ class TextBox(wx.Frame):
     def __init__(self):
         wx.Frame.__init__(self,None,-1,"Example For TextCtrl",size=(600,500))
         self.panel=wx.Panel(self,-1)
+        self.url=wx.TextCtrl(self.panel,-1,"",size=(390,-1))
+        self.url.SetInsertionPoint(0)
         self.param1=wx.StaticText(self.panel,-1,"param:")
         self.pvalue1=wx.TextCtrl(self.panel,-1,"",size=(175,-1))
         self.pvalue1.SetInsertionPoint(0)
@@ -28,11 +30,11 @@ class TextBox(wx.Frame):
         self.result=wx.StaticText(self.panel,-1,"result:")
         self.json=wx.TextCtrl(self.panel,-1,"",size=(400,300),style=wx.TE_MULTILINE|wx.TE_RICH2)
         self.json.SetInsertionPoint(0)
-        self.url=wx.TextCtrl(self.panel,-1,"",size=(390,-1))
-        self.url.SetInsertionPoint(0)
+
         self.copy=wx.Button(self.panel,-1,u"复制到剪切板")
         self.Bind(wx.EVT_BUTTON,self.Copy,self.copy)
         sizer=wx.GridBagSizer(5, 5)
+
         sizer.Add(wx.StaticText(self.panel,-1,"URL:"),pos=(0,0),flag=wx.LEFT | wx.TOP)
         sizer.Add(self.url,pos=(0,1),span=(1,3))
         sizer.Add(self.param1,pos=(1,0))
