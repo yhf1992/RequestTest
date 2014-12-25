@@ -34,7 +34,6 @@ class TextBox(wx.Frame):
         self.copy=wx.Button(self.panel,-1,u"复制到剪切板")
         self.Bind(wx.EVT_BUTTON,self.Copy,self.copy)
         sizer=wx.GridBagSizer(5, 5)
-
         sizer.Add(wx.StaticText(self.panel,-1,"URL:"),pos=(0,0),flag=wx.LEFT | wx.TOP)
         sizer.Add(self.url,pos=(0,1),span=(1,3))
         sizer.Add(self.param1,pos=(1,0))
